@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./index.css" />
+        <script src="../src/main.js"></script>
+    </head>
+    <body>
+        <h2>测试</h2>
+        <textarea id="log_output"></textarea>
+    </body>
+
+    <script>
+var log = 0,
+    $output = $('#log_output');
+
+function testLog(){
+    ML.log(log); 
+    $output.val(
+        $output.val() + '\n' + log
+    );
+    $output[0].scrollTop = 
+        $output[0].scrollHeight - $output[0].offsetHeight;
+    log++;
+    setTimeout(testLog, 1000);
+}
+
+testLog();
+
+
+function testSend(){
+    ML.send();
+    setTimeout(testSend, 3000);
+}
+
+testSend();
+    </script>
+
+</html>
