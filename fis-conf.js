@@ -2,8 +2,14 @@ fis.config.merge({
     roadmap : {
         path : [
             {
-                reg : /^\/.+-aio.*\.(css|js)$/i,
-                release : "/release$&"
+                reg : /client\/ml-aio.js$/i
+                , release : "/release/$&"
+                , url: "/$&"
+            }
+            ,{
+                reg : /server\/ml.php$/i
+                , release : "/release/$&"
+                , url : "/$&"
             }
         ]
     }

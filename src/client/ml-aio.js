@@ -1,6 +1,6 @@
 window.ML = (function(){
 
-__inline("../libs/zepto-1.0rc1/zepto.js");
+__inline("../../libs/zepto-1.0rc1/zepto.js");
 
 var _cache = [],
     console = window.console;
@@ -37,7 +37,7 @@ function send(){
         return;
     }
 
-    $.post('/ml.php', $.param({
+    $.post('/server/ml.php', $.param({
         log: toBeSend
     }));
 }
@@ -53,3 +53,4 @@ return {
 })();
 
 window.console = ML;
+
